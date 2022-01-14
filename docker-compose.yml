@@ -1,0 +1,28 @@
+version: '3'
+services:
+    frontend:
+        build:
+            context: ./frontend
+        container_name: go_frontend
+        restart: unless-stopped
+        volumes:
+            - './frontend:/code'
+            - './logs/frontend:/root/.npm/_logs/'
+        command: 'sh run_server.sh'
+        ports:
+            - '8080:3000'
+        links:
+            - backend
+        depends_on:
+            - backend
+    backend:
+        build:
+            context: ./backend
+        container_name: go_backend
+        restart: unless-stopped
+        volumes:
+            - './backend:/code'
+            - './logs/backend:/root/.npm/_logs/'
+        command: 'sh run_server.sh'
+        ports:
+            - '8081:3000'
