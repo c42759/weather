@@ -16,21 +16,21 @@ export default function CityWidget({ cityName, overcast, temperature, temperatur
                 {/**/}
                 <div className={"grid grid-cols-2 pb-12 text-center"}>
                     <div className={"border-r border-r-gray-300"}>
-                        <span className={"text-gray-300 mr-4"}>min</span> {temperatureMin}º
+                        <span className={"text-gray-400 mr-4"}>min</span> {temperatureMin}º
                     </div>
                     <div>
-                        <span className={"text-gray-300 mr-4"}>max</span> {temperatureMax}º
+                        <span className={"text-gray-400 mr-4"}>max</span> {temperatureMax}º
                     </div>
                 </div>
             </div>
             <hr className={"border-t-gray-300"} />
             <div className={"pt-12"}>
                 <div className={"grid grid-cols-2 pb-2"}>
-                    <div className={"text-gray-300"}>sunrise</div>
+                    <div className={"text-gray-400"}>sunrise</div>
                     <div className={"text-right"}>{sunrise}</div>
                 </div>
                 <div className={"grid grid-cols-2"}>
-                    <div className={"text-gray-300"}>sunset</div>
+                    <div className={"text-gray-400"}>sunset</div>
                     <div className={"text-right"}>{sunset}</div>
                 </div>
             </div>

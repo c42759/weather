@@ -26,7 +26,7 @@ export default function SearchModal({ setCity, disableModal }) {
                                    onChange={(e) => setText(e.target.value)}
                                    className={"w-full outline-0 border-b border-b-gray-300 " +
                                        "text-light text-2xl text-center uppercase"} />
-                            <p className={"text-base text-center text-gray-300"}>write a city name and press enter</p>
+                            <p className={"text-base text-center text-gray-400"}>write a city name and press enter</p>
                         </form>
                     </div>
                 </div>
