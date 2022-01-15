@@ -1,18 +1,23 @@
 import React, {useEffect, useState} from 'react';
-import moment from "moment";
 
 // import ReactDOM from 'react-dom';
+import Dashboard from "./components/dashboard";
+import Table from "./components/table";
+import Chart from "./components/chart";
 import TodayDate from "./components/date";
-import Cities from "./components/cities";
 import Footer from "./components/footer";
 import Search from "./components/search";
 
 
 export default function App() {
+    const [dashboard, setDashboard] = useState(true)
+    const [table, setTable] = useState(false)
+    const [chart, setChart] = useState(false)
 
     const [cities, setCities] = useState({})
 
     useEffect(() => {
+        return
         setCities(
             {...cities,
                 "aveiro": {
@@ -150,7 +155,6 @@ export default function App() {
 
     function setCity (name, object) {
         setCities({...cities, name: object})
-        console.log(cities)
     }
 
     return (
@@ -160,13 +164,19 @@ export default function App() {
                     <div className={"font-light uppercase tracking-widest"}>
                         <Search setCity={setCity} />
                     </div>
-                    <div className={"z-20 text-right font-light uppercase tracking-widest text-gray-300"}>
+                    <div className={"z-20 text-right font-light uppercase tracking-widest text-gray-400"}>
                         <TodayDate />
                     </div>
                 </div>
-                <Cities cities={cities}/>
+
+                {dashboard ? <Dashboard cities={cities}/> : null}
+                {table ? <Table /> : null}
+                {chart ? <Chart /> : null}
+
                 <div className={"text-base uppercase text-center pt-12"}>
-                    {Object.keys(cities).length ? <Footer/> : null}
+                    {Object.keys(cities).length ? <Footer dashboard={dashboard} setDashboard={setDashboard}
+                                                          table={table} setTable={setTable}
+                                                          chart={chart} setChart={setChart} /> : null}
                 </div>
             </div>
         </>
