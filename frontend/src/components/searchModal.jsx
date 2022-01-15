@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {getCity} from "../requests/cities";
+import {getCity} from "../services/cities";
 
 
 export default function SearchModal({ setCity, disableModal }) {
