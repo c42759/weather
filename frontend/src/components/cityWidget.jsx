@@ -10,10 +10,10 @@ export default function CityWidget(cityName, overcast, temperature, temperatureM
             </div>
             <div className={"grid grid-cols-2"}>
                 <div>
-                    <span className="text-gray-300">min</span> 12º
+                    <span className={"text-gray-300"}>min</span> 12º
                 </div>
-                <div className={"text-right"}
-                    <span className="text-gray-300">max</span> 25º
+                <div className={"text-right"}>
+                    <span className={"text-gray-300"}>max</span> 25º
                 </div>
             </div>
         </>
