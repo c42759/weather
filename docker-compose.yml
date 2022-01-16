@@ -27,7 +27,7 @@ services:
             CHOKIDAR_USEPOLLING: 'true'
         volumes:
             - './backend:/code'
-            - './logs/backend:/root/.npm/_logs/'
+            - './logs/backend:/code/logs'
         command: 'sh run_server.sh'
         ports:
             - '8081:8081'

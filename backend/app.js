@@ -1,17 +1,21 @@
 
+import fs from "fs"
+import path from "path"
 import express from "express"
 import morgan from "morgan"
 import cors from "cors"
-import axios from "axios"
 
-import {port, externalWeatherAPI, appId, cacheTime, units} from "./settings.js"
+import axios from "axios"
+import { port, externalWeatherAPI, appId, cacheTime, units } from "./settings.js"
 import { initReplaceAll } from "./lib.js"
 
 initReplaceAll()
 
 const app = express()
 
-app.use(morgan(':method :url :status :res[content-length] - :response-time ms')) // log requests
+const accessLogStream = fs.createWriteStream(path.join(path.resolve(), "./logs/access.log"), { flags: 'a' })
+
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms', {stream: accessLogStream})) // log requests
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
