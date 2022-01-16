@@ -4,7 +4,7 @@ import morgan from "morgan"
 import cors from "cors"
 import axios from "axios"
 
-import { port, externalWeatherAPI, appId, cacheTime } from "./settings.js"
+import {port, externalWeatherAPI, appId, cacheTime, units} from "./settings.js"
 import { initReplaceAll } from "./lib.js"
 
 initReplaceAll()
@@ -41,7 +41,7 @@ app.post('/cities/', async (req, res) => {
         return res.json(cities[city])
     }
 
-    await axios.get(`${externalWeatherAPI}/weather`, {params: {appid: appId, q: city}})
+    await axios.get(`${externalWeatherAPI}/weather`, {params: {appid: appId, units: units, q: city}})
         .then((response) => {
             const data = response.data
             data['retrieved_at'] = new Date().getTime()
