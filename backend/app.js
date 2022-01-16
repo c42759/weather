@@ -23,6 +23,7 @@ app.use((req, res, next)=> {
 
 // global variables
 const cities = {}
+const citiesForecast = {}
 
 
 app.get('/', (req, res) => {
@@ -53,6 +54,32 @@ app.post('/cities/', async (req, res) => {
         })
 
     return res.json(cities[city])
+})
+
+app.post('/cities/forecast/', async (req, res) => {
+
+    if (req.body["city"] === undefined) {
+        return res.status(403).json({details: "__city_field_is_missing__"}, )
+    }
+
+    const city = req.body["city"].toLowerCase()
+
+    if (citiesForecast[city] !== undefined && (new Date().getTime() - citiesForecast[city]["retrieved_at"]) <= cacheTime * 1000) {
+        return res.json(citiesForecast[city])
+    }
+
+    await axios.get(`${externalWeatherAPI}/forecast`, {params: {appid: appId, units: units, q: city}})
+        .then((response) => {
+            const data = response.data
+            data['retrieved_at'] = new Date().getTime()
+
+            citiesForecast[city] = response.data
+        }).catch((error) => {
+            let message = error.response.data.message
+            return res.json(`__${message.replaceAll(" ", "_")}__`)
+        })
+
+    return res.json(citiesForecast[city])
 })
 
 const server = app.listen(port, () => {
