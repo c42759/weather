@@ -34,7 +34,11 @@ export default function Dashboard({cities}) {
                                    temperatureMax={temperatureMax} sunrise={sunrise} sunset={sunset}/>
             })}
 
-            {Object.keys(cities).length === 1 ? (<CityForecast />) : null}
+            {Object.keys(cities).length === 1 ? Object.entries(cities).map(([key, city]) => {
+                let name = city.name
+
+                return <CityForecast key={key} cityName={name} />
+            }) : null}
         </div>
     )
 }
