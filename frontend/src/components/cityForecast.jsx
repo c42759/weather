@@ -43,9 +43,8 @@ export default function CityForecast({ cityName }) {
             <hr className={"border-t-gray-400"} />
             <div>
                 {Object.entries(temperatures).map(([weekDay, data]) => {
-
                     return (
-                        <div className={"grid grid-cols-2 gap-4 pt-6"}>
+                        <div key={weekDay} className={"grid grid-cols-2 gap-4 pt-6"}>
                             <div className={"text-gray-400"}>{weekDay}</div>
                             <div className={"grid grid-cols-2 text-center"}>
                                 <div className={"border-r border-r-gray-400"}>
