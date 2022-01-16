@@ -60,6 +60,8 @@ After 10 years of experience and 7 of them working with a good list of designers
 
 Using as software **Figma** as a design software, I was able to design a minimalist webapp with all the features requested, plus a few more.
 
+The design of the app was thought on a 720p screen (res.: 1280x720px).
+
 Click [here](https://www.figma.com/file/YfxQ0sC8jRUSdUHKvnWgtC/GOCONTACT) to check the design.
 
 
