@@ -3,6 +3,20 @@ import CityWidget from "./cityWidget";
 import CityForecast from "./cityForecast";
 
 export default function Dashboard({cities}) {
+    // Handle when cities list is empty
+    if (!Object.keys(cities).length) {
+        return (
+            <div className={"text-center uppercase text-gray-400 h-96 pt-24"}>
+                <div className={"relative h-full"}>
+                    <div className={"min-h-full grid grid-cols-1 gap-4 content-center"}>
+                        No city selected
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    // Handle cities list
     return (
         <div className={"grid grid-cols-3 gap-40"}>
             {Object.entries(cities).map(([key, city]) => {
