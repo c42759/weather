@@ -1,6 +1,7 @@
 
 import express from "express"
 import morgan from "morgan"
+import cors from "cors"
 import axios from "axios"
 
 import { port, externalWeatherAPI, appId, cacheTime } from "./settings.js"
@@ -11,7 +12,7 @@ initReplaceAll()
 const app = express()
 
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms')) // log requests
-
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 

@@ -2,7 +2,7 @@ import moment from "moment";
 import CityWidget from "./cityWidget";
 import CityForecast from "./cityForecast";
 
-export default function Cities({cities}) {
+export default function Dashboard({cities}) {
     return (
         <div className={"grid grid-cols-3 gap-40"}>
             {Object.entries(cities).map(([key, city]) => {
@@ -20,7 +20,7 @@ export default function Cities({cities}) {
                                    temperatureMax={temperatureMax} sunrise={sunrise} sunset={sunset}/>
             })}
 
-            {Object.keys(cities).length <= 1 ? (<CityForecast />) : null}
+            {Object.keys(cities).length === 1 ? (<CityForecast />) : null}
         </div>
     )
 }
