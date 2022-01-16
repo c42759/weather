@@ -85,7 +85,7 @@ Is really rare for me to jump in directly to code, and for this project I didn't
 
 ```json
 {
-    city: "str | eg.: aveiro"
+    "city": "str | eg.: aveiro"
 }
 ```
 
@@ -146,7 +146,7 @@ Is really rare for me to jump in directly to code, and for this project I didn't
 
 ```json
 {
-    city: "str | eg.: aveiro"
+    "city": "str | eg.: aveiro"
 }
 ```
 
