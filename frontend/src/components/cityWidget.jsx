@@ -1,15 +1,20 @@
 import {WiDayHail} from "weather-icons-react";
+import {AiOutlineCloseCircle} from "react-icons/ai";
+import WeatherIcon from "./weatherIcon";
 
-export default function CityWidget({ cityName, overcast, temperature, temperatureMin, temperatureMax, sunrise, sunset }) {
+export default function CityWidget({ cityName, iconCode, iconDescription, overcast, temperature, temperatureMin, temperatureMax, sunrise, sunset, delCity }) {
+
     return (
         <div>
+            <AiOutlineCloseCircle className={"float-right mt-2 select-none cursor-pointer"}
+                                  title={`Remove ${cityName}`} onClick={() => {delCity(cityName.toLowerCase())}}/>
             <h1 className="font-bold text-5xl uppercase tracking-widest pb-3">{cityName}</h1>
             <h2 className="text-2xl text-2xl uppercase tracking-widest pb-12">{overcast}</h2>
             <hr className={"border-t-gray-400"} />
             <div className={"pt-12"}>
                 <div className="grid grid-cols-3 pb-4">
                     <div className={"text-center pt-8"}>
-                        <WiDayHail size={92} color='#1F2937' />
+                        <WeatherIcon iconCode={iconCode} iconDescription={iconDescription} />
                     </div>
                     <div className="col-span-2 text-right font-light text-9xl">{temperature}º</div>
                 </div>

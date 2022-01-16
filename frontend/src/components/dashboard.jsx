@@ -3,7 +3,7 @@ import moment from "moment";
 import CityWidget from "./cityWidget";
 import CityForecast from "./cityForecast";
 
-export default function Dashboard({cities}) {
+export default function Dashboard({cities, delCity}) {
     // Handle when cities list is empty
     if (!Object.keys(cities).length) {
         return (
@@ -19,7 +19,7 @@ export default function Dashboard({cities}) {
 
     // Handle cities list
     return (
-        <div className={"grid grid-cols-3 gap-40"}>
+        <div className={"grid grid-cols-3 gap-40"} style={{height: "534px", overflow: "overlay"}}>
             {Object.entries(cities).map(([key, city]) => {
                 let name = city.name
 
@@ -31,8 +31,10 @@ export default function Dashboard({cities}) {
                 let sunset = moment.unix(city.sys.sunset).format("hh:mm A")
 
                 return <CityWidget key={key} cityName={name} overcast={city.weather[0].description}
+                                   iconCode={city.weather[0].icon} iconDescription={city.weather[0].description}
                                    temperature={temperature} temperatureMin={temperatureMin}
-                                   temperatureMax={temperatureMax} sunrise={sunrise} sunset={sunset}/>
+                                   temperatureMax={temperatureMax} sunrise={sunrise} sunset={sunset}
+                                   delCity={delCity}/>
             })}
 
             {Object.keys(cities).length === 1 ? Object.entries(cities).map(([key, city]) => {
