@@ -26,8 +26,8 @@ export default function Dashboard({cities}) {
                 let temperatureMin = parseInt(city.main.temp_min)
                 let temperatureMax = parseInt(city.main.temp_max)
 
-                let sunrise = moment.unix(city.sys.sunrise).format("hh:mm A");
-                let sunset = moment.unix(city.sys.sunset).format("hh:mm A");
+                let sunrise = moment.unix(city.sys.sunrise).format("hh:mm A")
+                let sunset = moment.unix(city.sys.sunset).format("hh:mm A")
 
                 return <CityWidget key={key} cityName={name} overcast={city.weather[0].description}
                                    temperature={temperature} temperatureMin={temperatureMin}
