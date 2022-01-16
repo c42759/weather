@@ -50,7 +50,7 @@ app.post('/cities/', async (req, res) => {
             cities[city] = response.data
         }).catch((error) => {
             let message = error.response.data.message
-            return res.json(`__${message.replaceAll(" ", "_")}__`)
+            return res.status(500).json(`__${message.replaceAll(" ", "_")}__`)
         })
 
     return res.json(cities[city])
@@ -76,7 +76,7 @@ app.post('/cities/forecast/', async (req, res) => {
             citiesForecast[city] = response.data
         }).catch((error) => {
             let message = error.response.data.message
-            return res.json(`__${message.replaceAll(" ", "_")}__`)
+            return res.status(500).json(`__${message.replaceAll(" ", "_")}__`)
         })
 
     return res.json(citiesForecast[city])
