@@ -8,12 +8,14 @@ export default function SearchModal({ setCity, disableModal }) {
     async function handleSubmit(e) {
         e.preventDefault();
 
-        setCity(text, {})
+        const res = await getCity(text.toLowerCase())
+
+        let cityName = res.name.toLowerCase()
+
+        setCity(cityName, res) // Add city to the list
+
+        setText("") // Reset field value
         disableModal()
-        setText("")
-        // const res = await getCity(text)
-        // console.log(res)
-        // setText("");
     }
 
     return (
@@ -24,7 +26,7 @@ export default function SearchModal({ setCity, disableModal }) {
                         <form onSubmit={handleSubmit}>
                             <input type={"text"} placeholder={"Aveiro..."} value={text}
                                    onChange={(e) => setText(e.target.value)}
-                                   className={"w-full outline-0 border-b border-b-gray-300 " +
+                                   className={"w-full outline-0 border-b border-b-gray-400 " +
                                        "text-light text-2xl text-center uppercase"} />
                             <p className={"text-base text-center text-gray-400"}>write a city name and press enter</p>
                         </form>
