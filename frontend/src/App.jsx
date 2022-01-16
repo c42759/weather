@@ -20,6 +20,10 @@ export default function App() {
         setCities({...cities, [name]: object})
     }
 
+    useEffect(() => {
+
+    })
+
     return (
         <>
             <div className={"text-2xl font-light text-gray-800 px-16 pt-12 pb-4"}>

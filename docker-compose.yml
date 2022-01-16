@@ -6,7 +6,8 @@ services:
         container_name: go_frontend
         restart: unless-stopped
         environment:
-            CHOKIDAR_USEPOLLING: "true"
+            CHOKIDAR_USEPOLLING: 'true'
+            NODE_ENV: 'development'
         volumes:
             - './frontend:/code'
             - './logs/frontend:/root/.npm/_logs/'
@@ -23,7 +24,7 @@ services:
         container_name: go_backend
         restart: unless-stopped
         environment:
-            CHOKIDAR_USEPOLLING: "true"
+            CHOKIDAR_USEPOLLING: 'true'
         volumes:
             - './backend:/code'
             - './logs/backend:/root/.npm/_logs/'
