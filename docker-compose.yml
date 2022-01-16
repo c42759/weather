@@ -30,4 +30,4 @@ services:
             - './logs/backend:/root/.npm/_logs/'
         command: 'sh run_server.sh'
         ports:
-            - '8081:3000'
+            - '8081:8081'
