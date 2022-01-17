@@ -1,7 +1,7 @@
-import moment from "moment";
+import moment from "moment"
 
-import CityWidget from "./cityWidget";
-import CityForecast from "./cityForecast";
+import CityWidget from "./cityWidget"
+import CityForecast from "./cityForecast"
 
 export default function Dashboard({cities, delCity}) {
     // Handle when cities list is empty

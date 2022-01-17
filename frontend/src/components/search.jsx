@@ -1,5 +1,5 @@
-import {useState} from "react";
-import SearchModal from "./searchModal";
+import {useState} from "react"
+import SearchModal from "./searchModal"
 
 export default function Search ({ setCity }) {
     const [active, setActive] = useState(false)

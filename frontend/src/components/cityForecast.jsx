@@ -1,7 +1,7 @@
-import moment from "moment";
+import moment from "moment"
 
-import { useEffect, useState } from "react";
-import { cityForecast, getCityForecast } from "../services/cities";
+import { useEffect, useState } from "react"
+import { getCityForecast } from "../services/cities"
 
 export default function CityForecast({ cityName }) {
     const [forecast, setForecast] = useState({})

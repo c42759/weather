@@ -1,6 +1,5 @@
-import {WiDayHail} from "weather-icons-react";
-import {AiOutlineCloseCircle} from "react-icons/ai";
-import WeatherIcon from "./weatherIcon";
+import {AiOutlineCloseCircle} from "react-icons/ai"
+import WeatherIcon from "./weatherIcon"
 
 export default function CityWidget({ cityName, iconCode, iconDescription, overcast, temperature, temperatureMin, temperatureMax, sunrise, sunset, delCity }) {
 

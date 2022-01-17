@@ -1,8 +1,6 @@
-import moment from "moment";
-import {useEffect, useState} from "react";
-import log from "tailwindcss/lib/util/log";
-import {BiDownArrowAlt, BiUpArrowAlt} from "react-icons/bi";
-import {GoArrowSmallDown, GoArrowSmallUp} from "react-icons/go";
+import moment from "moment"
+import {useEffect, useState} from "react"
+import {GoArrowSmallDown, GoArrowSmallUp} from "react-icons/go"
 
 export default function Table({cities}) {
     const ASC = "asc"
@@ -50,7 +48,7 @@ export default function Table({cities}) {
 
         const sortedKeys = Object.keys(o).sort((a,b) => {
             return dir === DESC ? o[b].sys.sunrise - o[a].sys.sunrise : o[a].sys.sunrise - o[b].sys.sunrise
-        });
+        })
 
         sortByKeys(sortedKeys, o)
     }
@@ -68,7 +66,7 @@ export default function Table({cities}) {
 
         const sortedKeys = Object.keys(o).sort((a,b) => {
             return dir === DESC ? o[b].sys.sunset - o[a].sys.sunset : o[a].sys.sunset - o[b].sys.sunset
-        });
+        })
 
         sortByKeys(sortedKeys, o)
     }
@@ -86,7 +84,7 @@ export default function Table({cities}) {
 
         const sortedKeys = Object.keys(o).sort((a,b) => {
             return dir === DESC ? o[b].main.temp - o[a].main.temp : o[a].main.temp - o[b].main.temp
-        });
+        })
 
         sortByKeys(sortedKeys, o)
     }
@@ -104,7 +102,7 @@ export default function Table({cities}) {
 
         const sortedKeys = Object.keys(o).sort((a,b) => {
             return dir === DESC ? o[b].main.temp_min - o[a].main.temp_min : o[a].main.temp_min - o[b].main.temp_min
-        });
+        })
 
         sortByKeys(sortedKeys, o)
     }
@@ -122,7 +120,7 @@ export default function Table({cities}) {
 
         const sortedKeys = Object.keys(o).sort((a,b) => {
             return dir === DESC ? o[b].main.temp_max - o[a].main.temp_max : o[a].main.temp_max - o[b].main.temp_max
-        });
+        })
 
         sortByKeys(sortedKeys, o)
     }

@@ -1,4 +1,4 @@
-import {WiDaySunny, WiNightClear, WiDayCloudyHigh, WiNightAltCloudy, WiCloud, WiCloudy, WiRain, WiNightAltRain, WiDayLightning, WiNightLightning, WiDaySnow, WiNightAltSnow, WiDayFog, WiNightFog} from "weather-icons-react";
+import {WiDaySunny, WiNightClear, WiDayCloudyHigh, WiNightAltCloudy, WiCloud, WiCloudy, WiRain, WiNightAltRain, WiDayLightning, WiNightLightning, WiDaySnow, WiNightAltSnow, WiDayFog, WiNightFog} from "weather-icons-react"
 
 export default function WeatherIcon({iconCode, iconDescription}) {
     if (iconCode === "01d") {
@@ -65,4 +65,5 @@ export default function WeatherIcon({iconCode, iconDescription}) {
         return (<WiNightFog  size={92} color="#1F2937" title={iconDescription} />)
     }
 
+    return null
 }

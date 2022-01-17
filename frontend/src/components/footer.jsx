@@ -1,5 +1,5 @@
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { RiBarChartFill, RiDashboardFill } from "react-icons/ri";
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { RiBarChartFill, RiDashboardFill } from "react-icons/ri"
 
 export default function Footer ({ dashboard, setDashboard, table, setTable, chart, setChart }) {
 

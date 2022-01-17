@@ -1,8 +1,7 @@
-import {useEffect, useState} from "react";
+import {useEffect, useState} from "react"
 
 export default function Chart({cities}) {
     const [tempMin, setTempMin] = useState(false)
-    const [tempMax, setTempMax] = useState(false)
     const [tempRange, setTempRange] = useState(false)
 
     useEffect(() => {
@@ -22,7 +21,6 @@ export default function Chart({cities}) {
         })
 
         setTempMin(min)
-        setTempMax(max)
         setTempRange(max - min)
     }, [cities])
 

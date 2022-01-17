@@ -1,13 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from "react"
 
-// import ReactDOM from 'react-dom';
-import Dashboard from "./components/dashboard";
-import Table from "./components/table";
-import Chart from "./components/chart";
-import TodayDate from "./components/date";
-import Footer from "./components/footer";
-import Search from "./components/search";
-import CityForecast from "./components/cityForecast";
+import Dashboard from "./components/dashboard"
+import Table from "./components/table"
+import Chart from "./components/chart"
+import TodayDate from "./components/date"
+import Footer from "./components/footer"
+import Search from "./components/search"
 
 
 export default function App() {

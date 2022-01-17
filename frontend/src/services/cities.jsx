@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "axios"
 import { API_URL } from "../settings"
 
 export function getCity(cityName) {
@@ -9,7 +9,7 @@ export function getCity(cityName) {
             .post(url, {"city": cityName})
             .then((res) => resolve(res.data))
             .catch(err => reject(err.response.data))
-    });
+    })
 }
 
 export function getCityForecast(cityName) {
@@ -20,5 +20,5 @@ export function getCityForecast(cityName) {
             .post(url, {"city": cityName})
             .then((res) => resolve(res.data))
             .catch(err => reject(err.response.data))
-    });
+    })
 }
