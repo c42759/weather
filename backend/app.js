@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 app.post('/cities/', async (req, res) => {
 
     if (req.body["city"] === undefined) {
-        return res.status(403).json({details: "__city_field_is_missing__"}, )
+        return res.status(400).json({details: "__city_field_is_missing__"}, )
     }
 
     const city = req.body["city"].toLowerCase()
@@ -63,7 +63,7 @@ app.post('/cities/', async (req, res) => {
 app.post('/cities/forecast/', async (req, res) => {
 
     if (req.body["city"] === undefined) {
-        return res.status(403).json({details: "__city_field_is_missing__"}, )
+        return res.status(400).json({details: "__city_field_is_missing__"}, )
     }
 
     const city = req.body["city"].toLowerCase()
