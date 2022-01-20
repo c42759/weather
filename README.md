@@ -252,5 +252,5 @@ Is really rare for me to jump in directly to code, and for this project I didn't
 **Steps:**
 
 1. Edit the file `./backend/settings.js` and update the variable value `appId` at line 8 to the with a valid Open Weather Map API Key as a string.
-2. Open the Windows/Mac/Linux Terminal in the `./backend` and run `npm install`, following with `npm start`.
+2. Open the Windows/Mac/Linux Terminal in the `./backend` and run `npm install`, following with `node app.js`.
 3. Open the Windows/Mac/Linux Terminal in the `./frontend` and run `npm install`, following with `npm start`, a browser windows should be atomically open with the address http://localhost:3000.
